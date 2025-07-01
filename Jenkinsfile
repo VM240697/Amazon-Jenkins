@@ -1,29 +1,19 @@
 pipeline {
     agent any
-    environment {
-        // Use PATH+EXTRA to append to PATH properly
-        PATH = "/usr/bin:/bin:/opt/homebrew/bin"
-    }
+       }
     stages {
 
         stage('pull scm') {
             steps {
-                git branch: 'main', url: 'https://github.com/PraveenKuber/Amazon-Jenkins.git'
+                git branch: 'main', url: 'https://github.com/VM240697/Amazon-Jenkins'
             }
         }
-        stage('compile') {
+        stage('Compile') {
             steps {
                 sh 'mvn compile'
             }
         }
 
-        stage('build') {
-            steps {
-                 sh 'mvn clean install'
-            }
-        }
-
-        
     }
 
   post{
