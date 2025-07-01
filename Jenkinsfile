@@ -1,11 +1,11 @@
 pipeline {
     agent any
-       }
+       
     stages {
 
         stage('pull scm') {
             steps {
-                git branch: 'main', url: 'https://github.com/VM240697/Amazon-Jenkins'
+                git branch: 'Master', url: 'https://github.com/VM240697/Amazon-Jenkins'
             }
         }
         stage('Compile') {
